@@ -55,6 +55,13 @@ body {
 
 .wheel-panel {
   width: min(980px, 100%);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px;
+  align-items: start;
+}
+
+.wheel-side {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,7 +121,7 @@ body {
 
 .pointer {
   position: absolute;
-  top: -28px;
+  top: 0;
   width: 0;
   height: 0;
   border-left: 22px solid transparent;
@@ -226,6 +233,10 @@ body {
 @media (max-width: 640px) {
   :root {
     --wheel-radius: 150px;
+  }
+
+  .wheel-panel {
+    grid-template-columns: 1fr;
   }
 
   .center-button {
