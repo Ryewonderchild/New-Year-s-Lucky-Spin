@@ -18,20 +18,17 @@
       <div class="wheel-wrapper">
         <div class="pointer" aria-hidden="true"></div>
         <div class="wheel" id="wheel" role="img" aria-label="马年新春抽奖大转盘"></div>
-        <div class="center-badge">
-          <span>开</span>
-          <span>运</span>
-        </div>
+        <button id="spinButton" class="spin-btn center-button">
+          <span>立即</span>
+          <span>开转</span>
+        </button>
       </div>
 
-      <div class="controls">
-        <button id="spinButton" class="spin-btn">立即开转</button>
-        <div class="result" aria-live="polite">
-          <span class="result-label">开奖结果：</span>
-          <span id="resultText">等待抽奖</span>
-        </div>
-        <p class="tip">温馨提示：每位参与者限抽一次，祝您马到成功！</p>
+      <div class="result" aria-live="polite">
+        <span class="result-label">开奖结果：</span>
+        <span id="resultText">等待抽奖</span>
       </div>
+      <p class="tip">温馨提示：每位参与者限抽一次，祝您马到成功！</p>
     </section>
 
     <section class="prize-list">

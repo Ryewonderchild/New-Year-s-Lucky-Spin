@@ -6,6 +6,7 @@
   --gold: #f7d16a;
   --deep-gold: #d8a843;
   --ivory: #fff8ed;
+  --wheel-radius: 200px;
 }
 
 * {
@@ -54,15 +55,15 @@ body {
 
 .wheel-panel {
   width: min(980px, 100%);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
+  gap: 18px;
 }
 
 .wheel-wrapper {
   position: relative;
+  width: min(520px, 90vw);
   width: min(360px, 80vw);
   aspect-ratio: 1;
   display: grid;
@@ -90,6 +91,20 @@ body {
   overflow: hidden;
 }
 
+.wheel-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  font-weight: 700;
+  color: #6a2e20;
+  font-size: clamp(0.75rem, 1.6vw, 1rem);
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+  transform: rotate(var(--angle)) translateY(calc(-1 * var(--wheel-radius)))
+    rotate(calc(-1 * var(--angle)));
+}
+
 .wheel::after {
   content: "";
   position: absolute;
@@ -100,20 +115,20 @@ body {
 
 .pointer {
   position: absolute;
-  top: -8px;
+  top: -28px;
   width: 0;
   height: 0;
-  border-left: 18px solid transparent;
-  border-right: 18px solid transparent;
-  border-bottom: 36px solid var(--dark-red);
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 44px solid var(--dark-red);
   filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.2));
   z-index: 2;
 }
 
-.center-badge {
+.center-button {
   position: absolute;
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   background: radial-gradient(circle at top, #fff6d0 0%, var(--gold) 50%, var(--deep-gold) 100%);
   display: grid;
@@ -122,30 +137,29 @@ body {
   font-weight: 700;
   color: var(--dark-red);
   letter-spacing: 4px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   border: 6px solid var(--red);
   box-shadow: inset 0 4px 10px rgba(255, 255, 255, 0.6);
   z-index: 1;
-}
-
-.controls {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: center;
 }
 
 .spin-btn {
   background: linear-gradient(135deg, var(--red), #f14646);
   border: none;
   color: white;
-  padding: 14px 40px;
-  border-radius: 999px;
+  padding: 0;
+  border-radius: 50%;
   font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 10px 20px rgba(198, 13, 13, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.center-button {
+  background: radial-gradient(circle at top, #fff6d0 0%, var(--gold) 50%, var(--deep-gold) 100%);
+  color: var(--dark-red);
+  letter-spacing: 4px;
 }
 
 .spin-btn:disabled {
@@ -164,6 +178,7 @@ body {
   border-radius: 16px;
   border: 1px solid rgba(139, 8, 8, 0.2);
   font-size: 1.05rem;
+  text-align: center;
 }
 
 .result-label {
@@ -174,6 +189,7 @@ body {
 .tip {
   color: #7a3b2b;
   font-size: 0.95rem;
+  text-align: center;
 }
 
 .prize-list {
@@ -213,13 +229,13 @@ body {
 }
 
 @media (max-width: 640px) {
-  .center-badge {
-    width: 96px;
-    height: 96px;
-    font-size: 1rem;
+  :root {
+    --wheel-radius: 150px;
   }
 
-  .spin-btn {
-    width: 100%;
+  .center-button {
+    width: 104px;
+    height: 104px;
+    font-size: 0.95rem;
   }
 }

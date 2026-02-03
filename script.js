@@ -29,6 +29,19 @@ const renderPrizeList = () => {
   });
 };
 
+const renderWheelLabels = () => {
+  wheel.querySelectorAll(".wheel-label").forEach((label) => label.remove());
+  const segmentAngle = 360 / prizes.length;
+  prizes.forEach((prize, index) => {
+    const label = document.createElement("div");
+    label.className = "wheel-label";
+    const angle = segmentAngle * index + segmentAngle / 2;
+    label.style.setProperty("--angle", `${angle}deg`);
+    label.textContent = prize.name;
+    wheel.appendChild(label);
+  });
+};
+
 const spinWheel = () => {
   if (isSpinning) {
     return;
@@ -55,3 +68,4 @@ const spinWheel = () => {
 
 spinButton.addEventListener("click", spinWheel);
 renderPrizeList();
+renderWheelLabels();
