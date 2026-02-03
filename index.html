@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>马年新春抽奖大转盘</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">2026 马年 · 新春纳福</p>
+      <h1>中国马年新年抽奖大转盘</h1>
+      <p class="subtitle">转动幸运之轮，抽取开年好彩头。</p>
+    </header>
+
+    <section class="wheel-panel">
+      <div class="wheel-wrapper">
+        <div class="pointer" aria-hidden="true"></div>
+        <div class="wheel" id="wheel" role="img" aria-label="马年新春抽奖大转盘"></div>
+        <button id="spinButton" class="spin-btn center-button">
+          <span>转</span>
+          <span>盘</span>
+          <span>抽</span>
+          <span>奖</span>
+        </button>
+      </div>
+
+      <div class="result" aria-live="polite">
+        <span class="result-label">开奖结果：</span>
+        <span id="resultText">等待抽奖</span>
+      </div>
+      <p class="tip">温馨提示：每位参与者限抽一次，祝您马到成功！</p>
+    </section>
+
+    <section class="prize-list">
+      <h2>奖品设置</h2>
+      <ul id="prizeList"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
