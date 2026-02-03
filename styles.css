@@ -64,6 +64,7 @@ body {
 .wheel-wrapper {
   position: relative;
   width: min(520px, 90vw);
+  width: min(360px, 80vw);
   aspect-ratio: 1;
   display: grid;
   place-items: center;
