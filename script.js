@@ -1,12 +1,8 @@
 const prizes = [
-  { name: "马到成功一等奖", detail: "金马摆件 + 新年福袋" },
-  { name: "鸿运当头二等奖", detail: "红火年礼盒" },
-  { name: "腾跃三等奖", detail: "马年纪念帆布包" },
-  { name: "福气四等奖", detail: "好运红包 88 元" },
-  { name: "好运连连", detail: "新年上上签" },
-  { name: "招财进宝", detail: "金色主题保温杯" },
-  { name: "瑞气盈门", detail: "马年主题贴纸" },
-  { name: "惊喜奖", detail: "随机小礼" }
+  { name: "高效办公套装", detail: "拓展坞+电动搅拌杯" },
+  { name: "好好午休套装", detail: "深睡眼罩2.0+午休枕" },
+  { name: "保护颈椎套装", detail: "笔记本电脑支架" },
+  { name: "保持内裤干燥套装", detail: "加湿器" }
 ];
 
 const wheel = document.getElementById("wheel");
