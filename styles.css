@@ -64,7 +64,6 @@ body {
 .wheel-wrapper {
   position: relative;
   width: min(520px, 90vw);
-  width: min(360px, 80vw);
   aspect-ratio: 1;
   display: grid;
   place-items: center;
@@ -102,7 +101,7 @@ body {
   text-shadow: 0 2px 4px rgba(255, 255, 255, 0.7);
   white-space: nowrap;
   transform: rotate(var(--angle)) translateY(calc(-1 * var(--wheel-radius)))
-    rotate(calc(-1 * var(--angle)));
+    rotate(90deg);
 }
 
 .wheel::after {
@@ -132,11 +131,13 @@ body {
   border-radius: 50%;
   background: radial-gradient(circle at top, #fff6d0 0%, var(--gold) 50%, var(--deep-gold) 100%);
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   place-items: center;
-  gap: 4px;
+  gap: 0;
   font-weight: 700;
   color: var(--dark-red);
-  letter-spacing: 4px;
+  letter-spacing: 0;
   font-size: 1.1rem;
   border: 6px solid var(--red);
   box-shadow: inset 0 4px 10px rgba(255, 255, 255, 0.6);
@@ -154,12 +155,6 @@ body {
   cursor: pointer;
   box-shadow: 0 10px 20px rgba(198, 13, 13, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.center-button {
-  background: radial-gradient(circle at top, #fff6d0 0%, var(--gold) 50%, var(--deep-gold) 100%);
-  color: var(--dark-red);
-  letter-spacing: 4px;
 }
 
 .spin-btn:disabled {

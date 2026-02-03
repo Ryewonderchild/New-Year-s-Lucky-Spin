@@ -14,6 +14,13 @@ const spinButton = document.getElementById("spinButton");
 const resultText = document.getElementById("resultText");
 const prizeList = document.getElementById("prizeList");
 
+const segmentColors = [
+  "#f5c36a",
+  "#fbe2a0",
+  "#f59b52",
+  "#fbe2a0"
+];
+
 let currentRotation = 0;
 let isSpinning = false;
 
@@ -32,6 +39,15 @@ const renderPrizeList = () => {
 const renderWheelLabels = () => {
   wheel.querySelectorAll(".wheel-label").forEach((label) => label.remove());
   const segmentAngle = 360 / prizes.length;
+  const gradientStops = prizes
+    .map((_, index) => {
+      const color = segmentColors[index % segmentColors.length];
+      const start = segmentAngle * index;
+      const end = start + segmentAngle;
+      return `${color} ${start}deg ${end}deg`;
+    })
+    .join(", ");
+  wheel.style.background = `conic-gradient(${gradientStops})`;
   prizes.forEach((prize, index) => {
     const label = document.createElement("div");
     label.className = "wheel-label";
