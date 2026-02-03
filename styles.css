@@ -119,7 +119,7 @@ body {
   height: 0;
   border-left: 22px solid transparent;
   border-right: 22px solid transparent;
-  border-bottom: 44px solid var(--dark-red);
+  border-top: 44px solid var(--dark-red);
   filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.2));
   z-index: 2;
 }
